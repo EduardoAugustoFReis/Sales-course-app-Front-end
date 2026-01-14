@@ -1,0 +1,9 @@
+.container {
+  padding-left: var(--space-1);
+}
+
+.span {
+  font-size: var(--text-sm);
+  color: var(--error);
+  line-height: var(--leading-tight);
+}

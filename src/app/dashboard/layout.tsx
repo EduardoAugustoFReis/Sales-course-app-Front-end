@@ -10,7 +10,7 @@ export default async function DashboardLayout({
 }) {
   const token = (await cookies()).get("token")?.value;
 
-  if (!token) return redirect("/login");
+  if (!token) return redirect("/");
 
   let user;
 
@@ -22,7 +22,7 @@ export default async function DashboardLayout({
     });
   } catch {
     // Token inválido ou expirado
-    return redirect("/login");
+    return redirect("/");
   }
 
   return (

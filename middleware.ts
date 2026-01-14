@@ -8,12 +8,12 @@ export function middleware(req: NextRequest) {
   if (req.nextUrl.pathname.startsWith("/dashboard")) {
     // Se não estiver logado (sem token), redireciona para /login
     if (!token) {
-      return NextResponse.redirect(new URL("/login", req.url));
+      return NextResponse.redirect(new URL("/", req.url));
     }
   }
 
   // 2. Evita que usuários logados acessem a página de login
-  if (req.nextUrl.pathname === "/login" && token) {
+  if (req.nextUrl.pathname === "/" && token) {
     return NextResponse.redirect(new URL("/dashboard", req.url));
   }
 
@@ -25,6 +25,6 @@ export function middleware(req: NextRequest) {
 export const config = {
   matcher: [
     "/dashboard/:path*", // qualquer rota dentro de /dashboard
-    "/login", // página de login
+    "/", // página de login
   ],
 };
