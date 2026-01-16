@@ -1,9 +1,16 @@
 "use server";
 
-import { LoginFields } from "@/types/auth";
-import { FormState } from "@/types/form";
+import { LoginResponse } from "@/types/auth";
+import { FormState, LoginFields } from "@/types/form";
+import { Role } from "@/types/roles";
 import { cookies } from "next/headers";
 import { redirect } from "next/navigation";
+
+const roleRedirectMap: Record<Role, string> = {
+  ADMIN: "/admin",
+  TEACHER: "/teacher",
+  STUDENT: "/student",
+};
 
 export async function loginAction(
   _: FormState<LoginFields>,
@@ -32,8 +39,6 @@ export async function loginAction(
 
   const API_URL = process.env.API_URL;
 
-  console.log(API_URL)
-
   const response = await fetch(`${API_URL}/auth`, {
     method: "POST",
     headers: {
@@ -49,15 +54,15 @@ export async function loginAction(
     };
   }
 
-  const data = await response.json();
+  const data: LoginResponse = await response.json();
 
   const cookieStore = await cookies();
   cookieStore.set("token", data.token, {
     httpOnly: true, // cookie não pode ser acessado pelo navegador
-    secure: true, // só enviado em conexões HTTPS 
+    secure: true, // só enviado em conexões HTTPS
     sameSite: "strict", // Controla quando o cookie é enviado em requisições cross-site
     path: "/", // Define em quais rotas o cookie é válido
   });
 
-  redirect("/dashboard"); // redireciona após login
+  return redirect(roleRedirectMap[data.user.role] ?? "/");
 }

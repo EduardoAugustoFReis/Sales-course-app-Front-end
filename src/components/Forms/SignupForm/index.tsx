@@ -1,10 +1,9 @@
 "use client";
 
-import { signupAction } from "@/actions/signup";
+import { signupAction } from "@/actions/auth/signup";
 import Input from "@/components/Input";
 import ButtonSubmit from "../ButtonSubmit";
-import { FormState } from "@/types/form";
-import { SignupFields } from "@/types/auth";
+import { FormState, SignupFields } from "@/types/form";
 import FieldFormError from "@/components/Helper/FieldFormError";
 import FormError from "@/components/Helper/FormError";
 import { useActionState } from "react";

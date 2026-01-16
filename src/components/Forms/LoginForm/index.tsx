@@ -1,10 +1,9 @@
 "use client";
 
-import { loginAction } from "@/actions/login";
+import { loginAction } from "@/actions/auth/login";
 import Input from "@/components/Input";
 import ButtonSubmit from "../ButtonSubmit";
-import { FormState } from "@/types/form";
-import { LoginFields } from "@/types/auth";
+import { FormState, LoginFields } from "@/types/form";
 import FormError from "@/components/Helper/FormError";
 import FieldFormError from "@/components/Helper/FieldFormError";
 import { useActionState } from "react";

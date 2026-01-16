@@ -1,9 +1,16 @@
 "use server";
 
-import { SignupFields } from "@/types/auth";
-import { FormState } from "@/types/form";
+import { LoginResponse } from "@/types/auth";
+import { FormState, SignupFields } from "@/types/form";
+import { Role } from "@/types/roles";
 import { cookies } from "next/headers";
 import { redirect } from "next/navigation";
+
+const roleRedirectMap: Record<Role, string> = {
+  ADMIN: "/admin",
+  TEACHER: "/teacher",
+  STUDENT: "/student",
+};
 
 export async function signupAction(
   _: FormState<SignupFields>,
@@ -42,9 +49,6 @@ export async function signupAction(
 
   const API_URL = process.env.API_URL;
 
-  console.log(API_URL)
-
-
   const createUserResponse = await fetch(`${API_URL}/users`, {
     method: "POST",
     headers: {
@@ -75,7 +79,7 @@ export async function signupAction(
     };
   }
 
-  const data = await loginResponse.json();
+  const data: LoginResponse = await loginResponse.json();
 
   const cookieStore = await cookies();
   cookieStore.set("token", data.token, {
@@ -85,5 +89,5 @@ export async function signupAction(
     path: "/",
   });
 
-  redirect("/dashboard");
+  return redirect(roleRedirectMap[data.user.role] ?? "/");
 }

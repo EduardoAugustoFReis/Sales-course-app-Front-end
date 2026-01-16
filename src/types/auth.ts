@@ -1,3 +1,9 @@
-export type LoginFields = "email" | "password";
+import { Role } from "./roles";
 
-export type SignupFields = "name" | "email" | "password";
+export type LoginResponse = {
+  user: {
+    email: string;
+    role: Role;
+  };
+  token: string;
+};
