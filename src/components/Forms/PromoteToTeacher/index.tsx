@@ -1,7 +1,6 @@
 "use client";
-
+import styles from "./styles.module.css";
 import { useActionState } from "react";
-import ButtonSubmit from "../ButtonSubmit";
 import promoteToTeacherAction from "@/actions/admin/promote-to-teacher";
 import FormError from "@/components/Helper/FormError";
 
@@ -24,7 +23,7 @@ export default function PromoteToTeacher({ userId }: { userId: number }) {
     <form action={formAction}>
       <input type="hidden" name="userId" value={userId} />
 
-      <ButtonSubmit title="Promover a professor" />
+      <button type="submit" className={styles.button}>Promover a professor</button>
 
       <FormError message={state.message} />
     </form>

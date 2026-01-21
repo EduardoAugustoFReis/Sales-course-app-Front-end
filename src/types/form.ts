@@ -7,3 +7,5 @@ export type FormState<TFields extends string> = {
 export type LoginFields = "email" | "password";
 
 export type SignupFields = "name" | "email" | "password";
+
+export type UpdateAccountFields = "name" | "email" | "password";

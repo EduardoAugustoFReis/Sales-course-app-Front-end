@@ -56,6 +56,8 @@
 
   --blue: #0958e0;
   --blue-dark: #032969;
+  --red: #e10c0c;
+  --red-dark: #a90a0a;
 
   --bg-page: var(--white-soft);
   --bg-surface: var(--white-pure);

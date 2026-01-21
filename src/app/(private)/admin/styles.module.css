@@ -1,0 +1,15 @@
+.page {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.content {
+  padding: var(--space-3);
+}
+
+.tableWrapper {
+  padding: var(--space-4);
+  border-radius: var(--radius-md);
+}
+

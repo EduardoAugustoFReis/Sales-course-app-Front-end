@@ -1,0 +1,10 @@
+.user-card {
+  background: var(--white-pure);
+  border-radius: var(--radius-md);
+  padding: var(--space-4);
+  border: 1px solid var(--border-default);
+}
+
+.user-card h3 {
+  margin-bottom: var(--space-3);
+}

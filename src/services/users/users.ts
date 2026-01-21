@@ -36,7 +36,12 @@ export async function getUsersById(userId: string): Promise<UserListDetail> {
     cache: "no-store",
   });
 
-  if (!response.ok) throw new Error("Erro ao buscar dados do usuário");
+  if (!response.ok) {
+    console.log("STATUS:", response.status);
+    const text = await response.text();
+    console.log("BODY:", text);
+    throw new Error("Erro ao buscar dados do usuário");
+  }
 
   const user = await response.json();
 

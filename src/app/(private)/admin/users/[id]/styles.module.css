@@ -1,0 +1,7 @@
+.user-details-page {
+  padding: var(--space-6);
+  max-width: 56rem;
+  margin: 0 auto;
+  display: grid;
+  gap: var(--space-6);
+}

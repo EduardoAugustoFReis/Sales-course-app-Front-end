@@ -1,0 +1,12 @@
+.action {
+  display: flex;
+  align-items: center;
+}
+
+.action a {
+  color: var(--red-dark);
+}
+
+.action a:hover {
+  color: var(--red);
+}

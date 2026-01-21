@@ -4,6 +4,7 @@ export type IUser = {
   id: string;
   name: string;
   email: string;
+  password: string;
   role: Role;
 };
 
@@ -28,6 +29,7 @@ export type UserListDetail = {
   name: string;
   email: string;
   role: Role;
+  createdAt: string;
   subscription?: {
     type: "FREE" | "PREMIUM";
     active: boolean;

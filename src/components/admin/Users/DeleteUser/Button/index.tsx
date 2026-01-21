@@ -1,12 +1,12 @@
-"use client";
-import { useFormStatus } from "react-dom";
 import { ButtonHTMLAttributes } from "react";
+import styles from "./styles.module.css";
+import { useFormStatus } from "react-dom";
 
 type ButtonProps = ButtonHTMLAttributes<HTMLButtonElement> & {
   title: string;
 };
 
-export default function ButtonSubmit({
+export default function Button({
   title,
   type = "submit",
   ...rest
@@ -14,8 +14,8 @@ export default function ButtonSubmit({
   const { pending } = useFormStatus();
 
   return (
-    <button className={`button`} type={type} {...rest}>
-      {pending ? "Carregando..." : title}
+    <button className={styles.button} type={type} {...rest}>
+      {pending ? "Excluindo" : title}
     </button>
   );
 }
