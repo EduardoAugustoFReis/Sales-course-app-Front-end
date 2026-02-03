@@ -1,5 +1,6 @@
 "use server";
 
+import { revalidatePath } from "next/cache";
 import { cookies } from "next/headers";
 
 type PromoteToTeacherState = {
@@ -9,7 +10,7 @@ type PromoteToTeacherState = {
 
 export default async function promoteToTeacherAction(
   _: PromoteToTeacherState,
-  formData: FormData
+  formData: FormData,
 ): Promise<PromoteToTeacherState> {
   const userId = formData.get("userId")?.toString();
 
@@ -24,15 +25,17 @@ export default async function promoteToTeacherAction(
       headers: {
         Authorization: `Bearer ${token}`,
       },
-    }
+    },
   );
-
+  console.log("STATUS:", response.status);
   if (!response.ok) {
     return {
       success: false,
       message: "Erro ao promover usuário",
     };
   }
+  
+  revalidatePath(`/admin/users/${userId}`);
 
   return { success: true };
 }

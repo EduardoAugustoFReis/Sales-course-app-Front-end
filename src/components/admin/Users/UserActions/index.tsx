@@ -8,12 +8,10 @@ type UserActionsProps = {
 };
 
 export default function UserActions({ user }: UserActionsProps) {
-  if (user.role !== "STUDENT") return null;
-
   return (
-    <div className={styles['user-actions']}>
-      <PromoteToTeacher userId={user.id} />
-      <DeleteUser userId={user.id}/>
+    <div className={styles["user-actions"]}>
+      {user.role === "STUDENT" && <PromoteToTeacher userId={user.id} />}
+      <DeleteUser userId={user.id} />
     </div>
   );
 }

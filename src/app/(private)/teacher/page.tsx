@@ -1,9 +1,5 @@
-import RoleLayout from "../RoleLayout";
+import { redirect } from "next/navigation";
 
 export default function TeacherPage() {
-  return (
-    <RoleLayout allowedRole="TEACHER">
-      <h1>Bem-vindo teacher</h1>
-    </RoleLayout>
-  );
+  redirect("/teacher/courses");
 }

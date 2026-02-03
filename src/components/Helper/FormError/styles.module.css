@@ -3,6 +3,7 @@
   border-radius: var(--radius-md);
   background-color: var(--error-soft);
   border: 1px solid var(--error);
+  margin-top: var(--space-1);
 }
 
 .span {

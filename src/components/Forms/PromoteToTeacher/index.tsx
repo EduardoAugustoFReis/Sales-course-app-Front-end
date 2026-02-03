@@ -16,14 +16,16 @@ const initialState: ActionState = {
 export default function PromoteToTeacher({ userId }: { userId: number }) {
   const [state, formAction] = useActionState(
     promoteToTeacherAction,
-    initialState
+    initialState,
   );
 
   return (
     <form action={formAction}>
       <input type="hidden" name="userId" value={userId} />
 
-      <button type="submit" className={styles.button}>Promover a professor</button>
+      <button type="submit" className={styles.button}>
+        Promover a professor
+      </button>
 
       <FormError message={state.message} />
     </form>

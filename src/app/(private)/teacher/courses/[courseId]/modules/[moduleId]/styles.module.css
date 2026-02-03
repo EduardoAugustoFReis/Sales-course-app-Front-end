@@ -1,0 +1,41 @@
+.container {
+  max-width: 60rem;
+  margin: 0 auto;
+  padding: var(--space-4);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.backLink {
+  align-self: flex-start;
+  color: var(--blue);
+  font-weight: 500;
+}
+
+.backLink:hover {
+  color: var(--blue-dark);
+}
+
+.cardWrapper {
+  width: 100%;
+}
+
+.actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: var(--space-2);
+  margin-top: var(--space-2);
+}
+
+.editButton {
+  padding: var(--space-2) var(--space-3);
+  border-radius: var(--radius-md);
+  background-color: var(--blue);
+  color: var(--white-pure);
+  transition: background-color 0.2s;
+}
+
+.editButton:hover {
+  background-color: var(--blue-dark);
+}

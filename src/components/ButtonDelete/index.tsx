@@ -6,7 +6,7 @@ type ButtonProps = ButtonHTMLAttributes<HTMLButtonElement> & {
   title: string;
 };
 
-export default function Button({
+export default function ButtonDelete({
   title,
   type = "submit",
   ...rest

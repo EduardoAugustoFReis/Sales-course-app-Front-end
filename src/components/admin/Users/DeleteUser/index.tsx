@@ -2,7 +2,7 @@
 import deleteUserAction from "@/actions/admin/delete-user";
 import FormError from "@/components/Helper/FormError";
 import { FormEvent, useActionState } from "react";
-import Button from "./Button";
+import Button from "../../../ButtonDelete";
 
 type DeleteUserButtonProps = {
   userId: number;

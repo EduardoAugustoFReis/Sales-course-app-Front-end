@@ -10,7 +10,7 @@ if (!API_URL) {
 export async function getUsers(): Promise<PaginatedUsers> {
   const token = (await cookies()).get("token")?.value;
 
-  if (!token) throw new Error("Não autorizado");
+  if (!token) throw new Error("Não autenticado");
 
   const response = await fetch(`${API_URL}/users`, {
     headers: {
@@ -27,7 +27,7 @@ export async function getUsers(): Promise<PaginatedUsers> {
 export async function getUsersById(userId: string): Promise<UserListDetail> {
   const token = (await cookies()).get("token")?.value;
 
-  if (!token) throw new Error("Não autorizado");
+  if (!token) throw new Error("Não autenticado");
 
   const response = await fetch(`${API_URL}/users/${userId}`, {
     headers: {
