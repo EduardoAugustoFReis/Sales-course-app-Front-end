@@ -1,11 +1,11 @@
 import Link from "next/link";
 import styles from "./styles.module.css";
 
-type Props = {
+type ModulesHeaderProps = {
   courseId: string;
 };
 
-export default function ModulesHeader({ courseId }: Props) {
+export default function ModulesHeader({ courseId }: ModulesHeaderProps) {
   return (
     <header className={styles.header}>
       <h2>Módulos do curso</h2>

@@ -15,19 +15,21 @@ export default async function DetailsCoursePage({
 
   return (
     <section className={styles.container}>
-      <Link className={styles.linkCourses} href={`/teacher/courses`}>
-        Voltar
-      </Link>
-      <div className={styles.cardBox}>
-        <CourseDetailCard course={course} />
-      </div>
-      <div className={styles.footer}>
+      <header className={styles.header}>
+        <Link className={styles.linkCourses} href={`/teacher/courses`}>
+          Voltar
+        </Link>
+
         <Link
           className={styles.linkModule}
           href={`/teacher/courses/${courseId}/modules`}
         >
-          Ver módulos deste curso
+          Ver módulos
         </Link>
+      </header>
+
+      <div className={styles.cardBox}>
+        <CourseDetailCard course={course} />
       </div>
     </section>
   );

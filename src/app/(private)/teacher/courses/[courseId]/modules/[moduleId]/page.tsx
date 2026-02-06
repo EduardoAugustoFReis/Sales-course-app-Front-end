@@ -20,12 +20,21 @@ export default async function ModuleDetailPage({
 
   return (
     <section className={styles.container}>
-      <Link
-        href={`/teacher/courses/${courseId}/modules`}
-        className={styles.backLink}
-      >
-        Voltar para módulos
-      </Link>
+      <header className={styles.header}>
+        <Link
+          href={`/teacher/courses/${courseId}/modules`}
+          className={styles.backLink}
+        >
+          Voltar para módulos
+        </Link>
+
+        <Link
+          href={`/teacher/courses/${courseId}/modules/${moduleId}/lessons`}
+          className={styles.lessonsLink}
+        >
+          Ver lições
+        </Link>
+      </header>
 
       <div className={styles.cardWrapper}>
         <ModuleDetailCard module={moduleDetails} />
@@ -39,7 +48,7 @@ export default async function ModuleDetailPage({
           Editar módulo
         </Link>
 
-        <DeleteModule courseId={courseId} moduleId={moduleId}/>
+        <DeleteModule courseId={courseId} moduleId={moduleId} />
       </div>
     </section>
   );

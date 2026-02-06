@@ -1,0 +1,14 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: var(--space-3);
+}
+
+.newButton {
+  padding: var(--space-3);
+  border-radius: var(--radius-md);
+  background: var(--blue);
+  color: var(--white-pure);
+  text-decoration: none;
+}

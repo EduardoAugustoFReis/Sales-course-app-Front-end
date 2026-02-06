@@ -1,0 +1,62 @@
+.container {
+  max-width: 60rem;
+  margin: 0 auto;
+  padding: var(--space-4);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.backLink {
+  color: var(--blue);
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.backLink:hover {
+  color: var(--blue-dark);
+  text-decoration: underline;
+}
+
+.lessonsLink {
+  background-color: var(--blue);
+  padding: var(--space-2) var(--space-3);
+  border-radius: var(--radius-md);
+  color: var(--white-pure);
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.lessonsLink:hover {
+  background-color: var(--blue-dark);
+}
+
+.cardWrapper {
+  width: 100%;
+}
+
+.actions {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.editButton {
+  padding: var(--space-2) var(--space-3);
+  border-radius: var(--radius-md);
+  background-color: var(--blue);
+  color: var(--white-pure);
+  transition: background-color 0.2s;
+  text-decoration: none;
+}
+
+.editButton:hover {
+  background-color: var(--blue-dark);
+}

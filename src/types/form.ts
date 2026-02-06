@@ -27,3 +27,7 @@ export type UpdateCourseFields =
 export type CreateModuleField = "title" | "position";
 
 export type UpdateModuleField = "title" | "position";
+
+export type CreateLessonField = "title" | "videoUrl" | "duration" | "position";
+
+export type UpdateLessonField = "title" | "videoUrl" | "duration" | "position";
