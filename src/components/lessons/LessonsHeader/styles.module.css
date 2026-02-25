@@ -5,6 +5,14 @@
   margin-bottom: var(--space-3);
 }
 
+.goBackLink {
+  color: var(--blue-dark);
+}
+
+.goBackLink:hover {
+  color: var(--blue);
+}
+
 .newButton {
   padding: var(--space-3);
   border-radius: var(--radius-md);

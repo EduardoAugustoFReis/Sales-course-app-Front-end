@@ -6,9 +6,19 @@ type LessonsHeaderHeaderProps = {
   moduleId: string;
 };
 
-export default function LessonsHeader({ courseId, moduleId }: LessonsHeaderHeaderProps) {
+export default function LessonsHeader({
+  courseId,
+  moduleId,
+}: LessonsHeaderHeaderProps) {
   return (
     <header className={styles.header}>
+      <Link
+        href={`/teacher/courses/${courseId}/modules/${moduleId}/`}
+        className={styles.goBackLink}
+      >
+        voltar
+      </Link>
+
       <h2>Lições do Módulo</h2>
 
       <Link

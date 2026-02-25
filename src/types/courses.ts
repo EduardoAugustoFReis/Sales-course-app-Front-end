@@ -32,3 +32,19 @@ export type PaginationCourse = {
   totalPage: number;
   data: CourseListItem[];
 };
+
+export type PublicCourseDetail = {
+  id: number;
+  title: string;
+  description?: string;
+  imageUrl?: string;
+  price: number;
+  teacher: {
+    name: string;
+  };
+  stats: {
+    modules: number;
+    lessons: number;
+    duration: number;
+  };
+};
