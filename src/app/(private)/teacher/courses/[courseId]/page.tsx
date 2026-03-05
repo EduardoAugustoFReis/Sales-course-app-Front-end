@@ -1,5 +1,6 @@
 import styles from "./styles.module.css";
 import CourseDetailCard from "@/components/courses/CourseDetailCard";
+import PublishCourseButtom from "@/components/courses/PublishCourseButtom";
 import { getCoursesById } from "@/services/courses/courses";
 import Link from "next/link";
 
@@ -19,6 +20,8 @@ export default async function DetailsCoursePage({
         <Link className={styles.linkCourses} href={`/teacher/courses`}>
           Voltar
         </Link>
+
+        <PublishCourseButtom courseId={courseId}/>
 
         <Link
           className={styles.linkModule}

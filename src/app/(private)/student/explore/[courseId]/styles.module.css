@@ -1,0 +1,24 @@
+.pageContainer {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-top: var(--space-6);
+  gap: var(--space-8);
+}
+
+.header {
+  width: 100%;
+  max-width: 50rem; 
+}
+
+.header a {
+  font-size: var(--text-md);
+  color: var(--blue);
+  font-weight: var(--font-medium);
+}
+
+.header a:hover {
+  color: var(--blue-dark);
+}

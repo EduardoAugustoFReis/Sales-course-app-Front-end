@@ -1,0 +1,63 @@
+.container {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  flex-direction: column;
+  padding: var(--space-6);
+}
+
+.title {
+  font-size: var(--text-3xl);
+  font-weight: var(--font-bold);
+}
+
+.subtitle {
+  font-size: var(--text-lg);
+  color: var(--text-secondary);
+}
+
+.actions {
+  display: flex;
+  gap: var(--space-6);
+  margin-top: var(--space-4);
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.cardButtonMyCourses {
+  min-width: 220px;
+  padding: var(--space-4) var(--space-6);
+  background-color: var(--blue);
+  color: var(--text-inverse);
+  border-radius: var(--radius-md);
+  font-weight: var(--font-semibold);
+  font-size: var(--text-md);
+  text-align: center;
+  transition: var(--transition-normal);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+}
+
+.cardButtonMyCourses:hover {
+  background-color: var(--blue-dark);
+  transform: translateY(-3px);
+}
+
+.cardButtonMyExplorer {
+  min-width: 220px;
+  padding: var(--space-4) var(--space-6);
+  background-color: var(--bg-surface);
+  color: var(--blue);
+  border: 1px solid var(--blue);
+  border-radius: var(--radius-md);
+  font-weight: var(--font-semibold);
+  font-size: var(--text-md);
+  text-align: center;
+  transition: var(--transition-normal);
+}
+
+.cardButtonMyExplorer:hover {
+  background-color: var(--blue);
+  color: var(--text-inverse);
+  transform: translateY(-3px);
+}

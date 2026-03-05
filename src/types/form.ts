@@ -31,3 +31,10 @@ export type UpdateModuleField = "title" | "position";
 export type CreateLessonField = "title" | "videoUrl" | "duration" | "position";
 
 export type UpdateLessonField = "title" | "videoUrl" | "duration" | "position";
+
+export type PurchaseCourseField =
+  | "cardNumber"
+  | "holderName"
+  | "expMonth"
+  | "expYear"
+  | "cvv";

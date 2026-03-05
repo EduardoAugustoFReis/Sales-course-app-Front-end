@@ -19,7 +19,7 @@ export async function getPublicCourse(
     `${API_URL}/courses/public?page=${page}&limit=${limit}`,
     {
       cache: "no-store",
-    }
+    },
   );
 
   if (!response.ok) {
@@ -63,6 +63,7 @@ export async function getCoursesById(courseId: string): Promise<CourseDetail> {
 
   return response.json();
 }
+
 
 export async function getTeacherCourses(): Promise<PaginationCourse> {
   const token = (await cookies()).get("token")?.value;

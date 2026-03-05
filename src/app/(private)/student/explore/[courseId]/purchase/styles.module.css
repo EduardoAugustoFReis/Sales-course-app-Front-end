@@ -1,0 +1,39 @@
+.pageContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem 0 3rem;
+  min-height: 100vh;
+}
+
+.header {
+  width: 50rem;
+  position: relative;
+  display: flex;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.header a {
+  color: var(--blue-dark);
+} 
+
+.header a:hover {
+  color: var(--blue);
+}
+
+.header h2 {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.actionBox {
+  width: 50rem;
+  display: flex;
+  
+  justify-content: space-between;
+  gap: 1rem;
+}

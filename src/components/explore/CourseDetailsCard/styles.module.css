@@ -1,0 +1,68 @@
+
+.card {
+  width: 100%;
+  max-width: 50rem;
+
+  display: flex;
+  flex-direction: column;
+
+  background-color: var(--bg-surface);
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+
+  transition: var(--transition-normal);
+}
+
+.card:hover {
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+}
+
+.image {
+  width: 100%;
+  height: 260px;
+  object-fit: cover;
+  background-color: var(--bg-muted);
+}
+
+.content {
+  padding: var(--space-6);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.title {
+  font-size: var(--text-3xl);
+  font-weight: var(--font-bold);
+}
+
+.teacher {
+  font-size: var(--text-sm);
+  color: var(--text-secondary);
+}
+
+.description {
+  font-size: var(--text-md);
+  line-height: var(--leading-normal);
+}
+
+.stats {
+  display: flex;
+  gap: var(--space-4);
+  font-size: var(--text-sm);
+  color: var(--text-secondary);
+}
+
+.footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: var(--space-4);
+}
+
+.price {
+  font-size: var(--text-2xl);
+  font-weight: var(--font-semibold);
+  color: var(--blue-dark);
+}
