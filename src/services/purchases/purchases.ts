@@ -1,4 +1,4 @@
-import { MyPurchasedCourses } from "@/types/purchase";
+import { MyPurchasesResponse } from "@/types/purchase";
 import { cookies } from "next/headers";
 
 const API_URL = process.env.API_URL;
@@ -7,7 +7,7 @@ if (!API_URL) {
   throw new Error("API_URL não definida");
 }
 
-export async function getMyPurchasedCourse(): Promise<MyPurchasedCourses[]> {
+export async function getMyPurchasedCourse(): Promise<MyPurchasesResponse> {
   const token = (await cookies()).get("token")?.value;
 
   if (!token) {

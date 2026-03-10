@@ -41,7 +41,7 @@ export async function getPublicCourseById(
   return response.json();
 }
 
-export async function getCoursesById(courseId: string): Promise<CourseDetail> {
+export async function getCourseContent(courseId: string): Promise<CourseDetail> {
   const token = (await cookies()).get("token")?.value;
 
   if (!token) {
@@ -61,9 +61,8 @@ export async function getCoursesById(courseId: string): Promise<CourseDetail> {
     throw new Error("Erro ao buscar curso");
   }
 
-  return response.json();
+  return response.json() as Promise<CourseDetail>;
 }
-
 
 export async function getTeacherCourses(): Promise<PaginationCourse> {
   const token = (await cookies()).get("token")?.value;
@@ -87,3 +86,5 @@ export async function getTeacherCourses(): Promise<PaginationCourse> {
 
   return response.json();
 }
+
+

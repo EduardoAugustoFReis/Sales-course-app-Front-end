@@ -2,6 +2,7 @@ import styles from "./styles.module.css";
 
 import ExploreCourseCard from "@/components/explore/CoursesCard";
 import { getPublicCourse } from "@/services/courses/courses";
+import Link from "next/link";
 
 export default async function ExplorePage() {
   const courses = await getPublicCourse();
@@ -9,6 +10,7 @@ export default async function ExplorePage() {
   return (
     <section className={styles.page}>
       <section className={styles.header}>
+        <Link href={`/student`}>Voltar</Link>
         <h2>Explore nossos cursos</h2>
         <p>
           Descubra conteúdos criados para acelerar sua carreira e desenvolver

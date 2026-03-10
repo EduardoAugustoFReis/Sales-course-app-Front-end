@@ -74,6 +74,6 @@ export default async function PurchaseCourseAction(
     };
   }
 
-  revalidatePath("/student");
-  redirect("/student");
+  revalidatePath("/student/my-course");
+  redirect("/student/my-course");
 }

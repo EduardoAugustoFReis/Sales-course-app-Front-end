@@ -15,6 +15,15 @@
   gap: var(--space-3);
 }
 
+.header a {
+  color: var(--blue-dark);
+}
+
+.header a:hover {
+  color: var(--blue);
+}
+
+
 .header p {
   font-size: var(--text-md);
   color: var(--color-gray-600);
