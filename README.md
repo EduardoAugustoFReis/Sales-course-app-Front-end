@@ -62,7 +62,7 @@ Essa abordagem reduz a necessidade de criar endpoints intermediários no fronten
 ## 1. Clone o repositório
 
 ```bash
-git clone https://github.com/seu-repo/sales-courses-front
+git clone https://github.com/EduardoAugustoFReis/sales-courses-front
 cd sales-courses-front
 ````
 ## 2. Instale as dependências
@@ -77,7 +77,7 @@ npm install
 ```
 ## 3. Configure o `.env`
 
-Crie um arquivo `.env.local` na raiz do projeto.
+Crie um arquivo `.env.local` na raiz do projeto:
 
 ```env
 NEXT_PUBLIC_API_URL=http://localhost:3000
@@ -180,6 +180,38 @@ Fluxo de autenticação:
 ```
 Authorization: Bearer token
 ```
+
+## 📷 Preview da aplicação
+
+### 🔐 Autenticação
+
+![Login](.github/images/login.png)
+
+![Signup](.github/images/signup.png)
+
+---
+
+### 📚 Explorar cursos
+
+![Explore](.github/images/explore.png)
+
+![Purchase](.github/images/purchase.png)
+
+---
+
+### 🎓 Área do aluno
+
+![My Courses](.github/images/my-courses.png)
+
+![Watching the course](.github/images/watching-the-course.png)
+
+---
+
+### ⚙️ Área administrativa (Professor / Admin)
+
+![Teacher Dashboard](.github/images/teacher-dashboard.png)
+
+![Admin Dashboard](.github/images/admin-dashboard.png)
 
 ## 🚨 Regras importantes da aplicação
 - Apenas cursos publicados podem ser comprados
