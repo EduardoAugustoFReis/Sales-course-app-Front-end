@@ -3,6 +3,7 @@ import styles from "./styles.module.css";
 import { getTeacherModulesById } from "@/services/modules/module";
 import ModuleDetailCard from "@/components/modules/ModuleDetailCard";
 import DeleteModule from "@/components/modules/DeleteModule";
+import { BackButton } from "@/components/BackButton";
 
 type ModuleDetailPageProps = {
   params: Promise<{
@@ -21,12 +22,7 @@ export default async function ModuleDetailPage({
   return (
     <section className={styles.container}>
       <header className={styles.header}>
-        <Link
-          href={`/teacher/courses/${courseId}/modules`}
-          className={styles.backLink}
-        >
-          Voltar para módulos
-        </Link>
+        <BackButton />
 
         <Link
           href={`/teacher/courses/${courseId}/modules/${moduleId}/lessons`}

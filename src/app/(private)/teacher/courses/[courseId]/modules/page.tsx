@@ -1,3 +1,4 @@
+import { BackButton } from "@/components/BackButton";
 import styles from "./styles.module.css";
 
 import ModuleList from "@/components/modules/ModuleList";
@@ -15,10 +16,9 @@ export default async function ModulesPage({ params }: ModulesPageProps) {
 
   return (
     <section className={styles.page}>
-
-      <Link className={styles.link} href={`/teacher/courses/${courseId}`}>
-        Voltar
-      </Link>
+      <div className="backButton">
+        <BackButton />
+      </div>
 
       <ModulesHeader courseId={courseId} />
 

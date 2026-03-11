@@ -11,7 +11,6 @@ type UpdateCoursePayload = {
   price?: number;
   description?: string;
   imageUrl?: string;
-  status?: "DRAFT" | "PUBLISHED";
 };
 
 export default async function updateCourseAction(
@@ -41,7 +40,6 @@ export default async function updateCourseAction(
   const price = Number(formData.get("price")?.toString().trim());
   const description = formData.get("description")?.toString().trim();
   const imageUrl = formData.get("imageUrl")?.toString().trim();
-  const status = formData.get("status")?.toString().trim();
 
   const payload: UpdateCoursePayload = {};
 
@@ -58,9 +56,6 @@ export default async function updateCourseAction(
   if (!isNaN(price) && price > 0) payload.price = price;
   if (description) payload.description = description;
   if (imageUrl) payload.imageUrl = imageUrl;
-  if (status === "DRAFT" || status === "PUBLISHED") {
-    payload.status = status;
-  }
 
   if (Object.keys(payload).length === 0) {
     return {
@@ -93,5 +88,4 @@ export default async function updateCourseAction(
 
   redirect(`/teacher/courses/${courseId}`);
   
-  return { success: true };
 }

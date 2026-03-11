@@ -1,3 +1,4 @@
+import { BackButton } from "@/components/BackButton";
 import styles from "./styles.module.css";
 import PurchaseForm from "@/components/Forms/PurchaseForm";
 import PurchaseSummary from "@/components/purchase/PurchaseSumary";
@@ -14,12 +15,14 @@ export default async function PurchasePage({ params }: PurchasePageProps) {
   return (
     <section className={styles.pageContainer}>
       <header className={styles.header}>
-          <Link href={`/student/explore/${courseId}`}>Voltar</Link>
-          <h2>Compra do curso</h2>
+        <div className="backButton">
+          <BackButton />
+        </div>
+        <h2>Compra do curso</h2>
       </header>
       <div className={styles.actionBox}>
-      <PurchaseForm courseId={courseId} />
-      <PurchaseSummary course={course} />
+        <PurchaseForm courseId={courseId} />
+        <PurchaseSummary course={course} />
       </div>
     </section>
   );

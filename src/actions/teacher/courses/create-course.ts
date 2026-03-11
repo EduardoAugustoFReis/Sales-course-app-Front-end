@@ -2,7 +2,9 @@
 
 import { getCurrentUser } from "@/services/auth/getCurrentUser";
 import { CreateCourseFields, FormState } from "@/types/form";
+import { revalidatePath } from "next/cache";
 import { cookies } from "next/headers";
+import { redirect } from "next/navigation";
 
 export default async function createCourseAction(
   _: FormState<CreateCourseFields>,
@@ -30,7 +32,6 @@ export default async function createCourseAction(
   const price = Number(formData.get("price")?.toString());
   const description = formData.get("description")?.toString();
   const imageUrl = formData.get("imageUrl")?.toString();
-  const status = formData.get("status")?.toString();
 
   if (!title) {
     return {
@@ -58,7 +59,7 @@ export default async function createCourseAction(
       Authorization: `Bearer ${token}`,
       "Content-Type": "application/json",
     },
-    body: JSON.stringify({title, price, description, imageUrl, status}),
+    body: JSON.stringify({ title, price, description, imageUrl }),
   });
 
   if (!response.ok) {
@@ -68,6 +69,10 @@ export default async function createCourseAction(
       message: error.message ?? "Erro ao criar curso",
     };
   }
+
+  revalidatePath("/teacher/courses");
+
+  redirect("/teacher/courses");
 
   return { success: true };
 }

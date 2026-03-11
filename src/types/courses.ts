@@ -8,6 +8,9 @@ export type CourseListItem = {
   price: number;
   status: CourseStatus;
   createdAt: string;
+  teacher: {
+    name: string;
+  }
 };
 
 export type CourseDetail = {
@@ -41,6 +44,7 @@ export type PaginationCourse = {
   totalPage: number;
   data: CourseListItem[];
 };
+
 
 export type PublicCourseDetail = {
   id: number;

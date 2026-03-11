@@ -8,7 +8,7 @@ type LessonsListProps = {
 
 export default function LessonsList({ lessons }: LessonsListProps) {
   if (lessons.length === 0) {
-    return <p className={styles.empty}>Nenhuma aula criada ainda.</p>;
+    return <p className={styles.empty}>Nenhuma lição criada ainda.</p>;
   }
 
   return (

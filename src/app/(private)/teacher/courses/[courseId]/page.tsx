@@ -1,7 +1,8 @@
+import { BackButton } from "@/components/BackButton";
 import styles from "./styles.module.css";
 import CourseDetailCard from "@/components/courses/CourseDetailCard";
 import PublishCourseButtom from "@/components/courses/PublishCourseButtom";
-import { getCoursesById } from "@/services/courses/courses";
+import { getTeacherCoursesById } from "@/services/courses/courses";
 import Link from "next/link";
 
 type DetailsCoursePageProps = {
@@ -12,14 +13,12 @@ export default async function DetailsCoursePage({
   params,
 }: DetailsCoursePageProps) {
   const { courseId } = await params;
-  const course = await getCoursesById(courseId);
+  const course = await getTeacherCoursesById(courseId);
 
   return (
     <section className={styles.container}>
       <header className={styles.header}>
-        <Link className={styles.linkCourses} href={`/teacher/courses`}>
-          Voltar
-        </Link>
+        <BackButton />
 
         <PublishCourseButtom courseId={courseId}/>
 

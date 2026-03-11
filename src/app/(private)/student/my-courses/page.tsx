@@ -1,3 +1,4 @@
+import { BackButton } from "@/components/BackButton";
 import styles from "./styles.module.css";
 
 import PurchaseCoursesCard from "@/components/purchase/PurchaseCoursesCard";
@@ -8,6 +9,9 @@ export default async function MyCoursesPage() {
 
   return (
     <section className={styles.pageContainer}>
+      <div className="backButton">
+        <BackButton />
+      </div>
       <h2 className={styles.title}>Meus Cursos</h2>
       <div className={styles.cardBox}>
         {purchases.map((purchase) => {

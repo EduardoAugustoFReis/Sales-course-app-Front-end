@@ -1,5 +1,6 @@
 import Link from "next/link";
 import styles from "./styles.module.css";
+import { BackButton } from "@/components/BackButton";
 
 type LessonsHeaderHeaderProps = {
   courseId: string;
@@ -12,12 +13,7 @@ export default function LessonsHeader({
 }: LessonsHeaderHeaderProps) {
   return (
     <header className={styles.header}>
-      <Link
-        href={`/teacher/courses/${courseId}/modules/${moduleId}/`}
-        className={styles.goBackLink}
-      >
-        voltar
-      </Link>
+     <BackButton />
 
       <h2>Lições do Módulo</h2>
 

@@ -1,3 +1,4 @@
+import { BackButton } from "@/components/BackButton";
 import styles from "./styles.module.css";
 import CourseDetailsCard from "@/components/explore/CourseDetailsCard";
 import { getPublicCourseById } from "@/services/courses/courses";
@@ -17,7 +18,7 @@ export default async function CourseDetailsPage({
   return (
     <section className={styles.pageContainer}>
       <div className={styles.header}>
-        <Link href={`/student/explore`}>Voltar</Link>
+        <BackButton />
       </div>
       <CourseDetailsCard course={course} />
     </section>

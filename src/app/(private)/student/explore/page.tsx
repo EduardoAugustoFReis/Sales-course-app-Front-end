@@ -1,3 +1,4 @@
+import { BackButton } from "@/components/BackButton";
 import styles from "./styles.module.css";
 
 import ExploreCourseCard from "@/components/explore/CoursesCard";
@@ -10,7 +11,9 @@ export default async function ExplorePage() {
   return (
     <section className={styles.page}>
       <section className={styles.header}>
-        <Link href={`/student`}>Voltar</Link>
+        <div className="backButton">
+          <BackButton />
+        </div>
         <h2>Explore nossos cursos</h2>
         <p>
           Descubra conteúdos criados para acelerar sua carreira e desenvolver

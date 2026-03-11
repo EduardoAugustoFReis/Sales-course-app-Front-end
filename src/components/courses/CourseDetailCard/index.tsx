@@ -1,11 +1,11 @@
-import { CourseDetail } from "@/types/courses";
+import { CourseListItem } from "@/types/courses";
 import styles from "./styles.module.css";
 import Image from "next/image";
 import Link from "next/link";
 import DeleteCourse from "../DeleteCourse";
 
 type CourseDetailCardProps = {
-  course: CourseDetail;
+  course: CourseListItem;
 };
 
 const statusClassMap = {

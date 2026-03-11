@@ -51,19 +51,6 @@ export default function UpdateCourseForm({ courseId }: { courseId: string }) {
       <TextArea label="Descrição do curso" id="description" />
       <FieldFormError message={state.fieldErrors?.description} />
 
-      <Select
-        label="Status do curso"
-        id="status"
-        name="status"
-        required
-        defaultValue={`DRAFT`}
-        options={[
-          { value: "DRAFT", label: "Rascunho" },
-          { value: "PUBLISHED", label: "Publicado" },
-        ]}
-      />
-      <FieldFormError message={state.fieldErrors?.status} />
-
       <ButtonSubmit title="Editar" />
 
       <FormError message={state.message} />

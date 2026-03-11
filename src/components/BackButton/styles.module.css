@@ -1,0 +1,12 @@
+.backButton {
+  cursor: pointer;
+  color: var(--blue-dark);
+  text-decoration: none;
+  background: none;
+  border: none;
+  font-size: var(--text-md);
+}
+
+.backButton:hover {
+  color: var(--blue);
+}

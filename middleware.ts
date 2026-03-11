@@ -19,5 +19,10 @@ export function middleware(req: NextRequest) {
 
 // Define em quais rotas o middleware deve rodar
 export const config = {
-  matcher: ["/admin/:path*", "/teacher/:path*", "/student/:path*"],
+  matcher: [
+    "/admin/:path*",
+    "/teacher/:path*",
+    "/student/:path*",
+    "/account/:path*",
+  ],
 };

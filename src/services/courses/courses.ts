@@ -1,5 +1,6 @@
 import {
   CourseDetail,
+  CourseListItem,
   PaginationCourse,
   PublicCourseDetail,
 } from "@/types/courses";
@@ -72,6 +73,29 @@ export async function getTeacherCourses(): Promise<PaginationCourse> {
   }
 
   const response = await fetch(`${API_URL}/courses/teacher-courses`, {
+    headers: {
+      Authorization: `Bearer ${token}`,
+    },
+    cache: "no-store",
+  });
+
+  if (!response.ok) {
+    const error = await response.json();
+    console.error(error);
+    throw new Error("Erro ao buscar cursos do professor");
+  }
+
+  return response.json();
+}
+
+export async function getTeacherCoursesById(courseId: string): Promise<CourseListItem> {
+  const token = (await cookies()).get("token")?.value;
+
+  if (!token) {
+    throw new Error("Usuário não autenticado");
+  }
+
+  const response = await fetch(`${API_URL}/courses/${courseId}/teacher`, {
     headers: {
       Authorization: `Bearer ${token}`,
     },

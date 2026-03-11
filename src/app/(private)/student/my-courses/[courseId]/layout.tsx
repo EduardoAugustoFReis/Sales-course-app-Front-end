@@ -3,6 +3,7 @@ import styles from "./styles.module.css";
 
 import { ReactNode } from "react";
 import Link from "next/link";
+import { BackButton } from "@/components/BackButton";
 
 type CourseLayoutProps = {
   children: ReactNode;
@@ -19,6 +20,10 @@ export default async function CourseLayout({
   return (
     <div className={styles.container}>
       <aside className={styles.sidebar}>
+        <div className={styles.backButton}>
+        <BackButton />
+        </div>
+
         {course.modules.map((module) => {
           return (
             <div className={styles.module} key={module.id}>
